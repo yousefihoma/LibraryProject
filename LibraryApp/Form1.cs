@@ -12,6 +12,7 @@ using Library1Utility;
 using System.Net;
 using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using LibraryApp.Permissions;
 namespace LibraryApp
 {
     public partial class frmMain : Form
@@ -29,9 +30,11 @@ namespace LibraryApp
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblTitle.Text =$"سیستم مذیریت کتابخانه عمومی- {UserName}" ;
-           
-        LblDate.Text = Convertor.ToShamsi(DateTime.Now);
+            lblTitle.Text = $"سیستم مذیریت کتابخانه عمومی- {UserName}";
+
+            LblDate.Text = Convertor.ToShamsi(DateTime.Now);
+            var permManager = new PermissionManager();
+            btnUser.Visible = permManager.DoesUserHavePermission((int)Program.CurrentUserId, ApplicationPermissions.User_List);
         }
         private void lblTempExit_Click(object sender, EventArgs e)
         {
@@ -190,6 +193,11 @@ namespace LibraryApp
         {
             frmBorrow frmBorrow = new frmBorrow();
             frmBorrow.ShowDialog();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

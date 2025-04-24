@@ -433,6 +433,7 @@
             this.btnUser.TabIndex = 9;
             this.btnUser.Text = "کاربران";
             this.btnUser.UseVisualStyleBackColor = false;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnBorrow
             // 

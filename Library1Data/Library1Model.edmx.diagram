@@ -17,6 +17,11 @@
         <AssociationConnector Association="LibraryModel.FK_Members_Gender" />
         <EntityTypeShape EntityType="LibraryModel.Education" Width="1.5" PointX="2.625" PointY="10.5" />
         <AssociationConnector Association="LibraryModel.FK_Members_Education" />
+        <EntityTypeShape EntityType="LibraryModel.Permissions" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="LibraryModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="LibraryModel.UserPermissions" Width="1.5" PointX="8" PointY="4.75" />
+        <AssociationConnector Association="LibraryModel.FK_UserPermissions_Permissions" />
+        <AssociationConnector Association="LibraryModel.FK_UserPermissions_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

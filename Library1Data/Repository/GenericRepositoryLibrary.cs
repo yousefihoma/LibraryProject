@@ -18,8 +18,7 @@ namespace LibraryData.Repository
             _db = db;
             _dbSet = _db.Set<TEntity>();
         }
-
-        public virtual  IQueryable<TEntity> GetAllAsQueryable() => _dbSet.AsQueryable();
+         public virtual  IQueryable<TEntity> GetAllAsQueryable() => _dbSet.AsQueryable();
         public virtual IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> where = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderby = null, string includes = "")
         {
@@ -59,12 +58,11 @@ namespace LibraryData.Repository
                 if(_db.Set<Members>().Any(r=>r.NationalCode.Trim() == nationalCode.Trim()))
                 {
                     throw new Exception("کد ملی تکراری است");
-                    //if("".Contains( "IX_NATIONALCODE_UNIQUE"))
-                }
+                 }
             }
             _dbSet.Add(entity);
 
-        }
+        } 
         public virtual void Update(TEntity entity)
         {
             ////  try

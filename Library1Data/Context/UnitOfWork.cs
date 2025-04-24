@@ -72,6 +72,38 @@ namespace Library1Data.Context
 
 
 
+
+        private GenericRepositoryLibrary<UserPermissions> _userPermission;
+        public GenericRepositoryLibrary<UserPermissions> UserPermission
+        {
+            get
+            {
+                if (_userPermission == null)
+                {
+                    _userPermission = new GenericRepositoryLibrary<UserPermissions>(db);
+                }
+
+                return _userPermission;
+            }
+        }
+
+
+
+        private GenericRepositoryLibrary<Permissions> _permission;
+        public GenericRepositoryLibrary<Permissions> Permission
+        {
+            get
+            {
+                if (_permission == null)
+                {
+                    _permission = new GenericRepositoryLibrary<Permissions>(db);
+                }
+
+                return _permission;
+            }
+        }
+
+
         public void Save()
         {
             db.SaveChanges();

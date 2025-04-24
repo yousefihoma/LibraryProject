@@ -1,4 +1,5 @@
-﻿using Library1Data.Context;
+﻿using Library1Data;
+using Library1Data.Context;
 using Library1Utility;
 using Microsoft.Win32;
 using System;
@@ -40,17 +41,18 @@ namespace LibraryApp.Forms
             }
             using (UnitOfWork db = new UnitOfWork())
             {
-                if (db.LoginRepository.GetAll(u => u.UserName == txtUserName.Text && u.Password == txtPassword.Text).Any())
+                var user = db.LoginRepository.GetAll(u => u.UserName == txtUserName.Text && u.Password == txtPassword.Text).FirstOrDefault();
+                if (user != null)
 
                 {
                     RegistryKey UsernameKey = Registry.CurrentUser.CreateSubKey("SoftWare\\Library");
                     try
                     {
                         UsernameKey.SetValue("UserNameRegister", txtUserName.Text.Trim());
+                        Program.CurrentUserId = user.UserID;
+                        DialogResult = DialogResult.OK;
                         Close();
-                        frmMain frmMain = new frmMain();
-                        frmMain.UserName = txtUserName.Text;
-                        frmMain.ShowDialog();
+
 
                     }
                     catch
@@ -64,7 +66,7 @@ namespace LibraryApp.Forms
                 }
                 else
                 {
-                    RtlMessageBox.Show("کاربری یافت نشد", "خطا");
+                    RtlMessageBox.Show("نام کاربری یا رمز عبور اشتباه است", "خطا");
                 }
             }
         }

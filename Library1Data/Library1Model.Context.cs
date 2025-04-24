@@ -33,5 +33,8 @@ namespace Library1Data
         public virtual DbSet<ViewBorrow> ViewBorrow { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Education> Education { get; set; }
+        public virtual DbSet<Permissions> Permissions { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<UserPermissions> UserPermissions { get; set; }
     }
 }

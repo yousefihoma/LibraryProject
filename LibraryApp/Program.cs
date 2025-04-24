@@ -12,6 +12,7 @@ namespace LibraryApp
 {
     internal static class Program
     {
+        public static int? CurrentUserId = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -48,11 +49,10 @@ namespace LibraryApp
             //Application.Run(new frmMembers());
             // Application.Run(new frmBorrow());
             //Application.Run(new frmBook());
-            Application.Run(new frmAddOrEditMember());
-
+            //  Application.Run(new frmAddOrEditMember());
 
         }
-        
+
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             MessageBox.Show(((Exception)(e.ExceptionObject)).Message);
