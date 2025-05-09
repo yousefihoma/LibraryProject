@@ -66,13 +66,7 @@ namespace LibraryApp.Forms
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             #region Validation
-            //foreach(CustomTextBox c in Controls.OfType<Control>().Where(r=>r.GetType() == typeof(CustomTextBox)))
-            //{
-            //    if (!c.IsValid)
-            //    {
-            //        MessageBox.Show("Test");
-            //    }
-            //}
+            
             var invalidControls = Controls.OfType<Control>().Where(r => r.GetType() == typeof(CustomTextBox) && ((CustomTextBox)r).IsValid == false);
             if(invalidControls.Any())
             {

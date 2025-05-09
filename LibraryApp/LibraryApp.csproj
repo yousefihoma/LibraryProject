@@ -37,11 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Library\LibraryData\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\Library\LibraryData\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="PersianMessagebox">
       <HintPath>C:\Users\hy\Downloads\Messagebox_In_CSharp\Projects\PersianMessagebox\PersianMessagebox\bin\Debug\PersianMessagebox.dll</HintPath>
@@ -50,6 +49,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -138,6 +138,7 @@
     <Compile Include="Forms\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.cs" />
     <Compile Include="Permissions\PermissionManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -460,9 +461,9 @@
       <Project>{2da64bb7-e5ef-4051-9a2e-5568997b3d66}</Project>
       <Name>Library1Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LibraryModel\LibraryModel.csproj">
+    <ProjectReference Include="..\LibraryModel\LibraryModel1.csproj">
       <Project>{29c1ef4b-e410-48b0-9ae2-a3565b1d28b6}</Project>
-      <Name>LibraryModel</Name>
+      <Name>LibraryModel1</Name>
     </ProjectReference>
     <ProjectReference Include="..\LibraryUtility\LibraryUtility.csproj">
       <Project>{6bdfb82d-5567-4fc2-b7e2-167ee06116b0}</Project>

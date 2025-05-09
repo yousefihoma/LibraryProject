@@ -23,9 +23,6 @@ namespace LibraryApp
             {
                 var items = repo.BorrowRepository.GetAllAsQueryable().Include(r => r.Books).Include(r => r.Members);
                 //select * From borrow left join books on bookid =  boorow.bookid left join member ...
-
-
-
                 // select member.memberid, book.bookid, book.title from ..^
                 var data = items.Select(r => new 
                 {
@@ -34,7 +31,6 @@ namespace LibraryApp
                     BookName = r.Books.Title
                 }).ToList();
             }
-            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
